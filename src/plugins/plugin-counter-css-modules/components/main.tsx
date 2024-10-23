@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import styles from './main.css?inline';
-import {CounterButton} from "./counter-button";
 
 // Tu componente de React
 const ComponenteBasico = () => {
@@ -13,17 +11,17 @@ const decrement = () => setCount(count - 1);
   return (
     <div>
       <h1>Contador: {count}</h1>
-      <CounterButton onClick={increment}>Incrementar</CounterButton>
-      <CounterButton onClick={decrement}>Decrementar</CounterButton>
+      <h2> Css Modules</h2>
+      <button onClick={increment}>Incrementar</button>
+      <button onClick={decrement}>Decrementar</button>
       <h1>¡Hola, mundo!</h1>
       <p>Este es un componente funcional básico en React dentro de un Web Component.</p>
-      <style type="text/css">{styles}</style>
     </div>
   );
 };
 
 // Web Component que encapsula el componente de React
-export class ReactWebComponent extends HTMLElement {
+export class ReactCSSWebComponent extends HTMLElement {
   constructor() {
     super();
     this.root = this.attachShadow({ mode: 'open' });
@@ -39,5 +37,4 @@ export class ReactWebComponent extends HTMLElement {
   }
 }
 
-// Define el nuevo Web Component personalizado
-customElements.define('react-web-component', ReactWebComponent);
+customElements.define('react-css-web-component', ReactCSSWebComponent);
