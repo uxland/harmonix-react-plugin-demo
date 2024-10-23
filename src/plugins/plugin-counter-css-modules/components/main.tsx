@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { CounterButton } from './counter-button';
 
 // Tu componente de React
 const ComponenteBasico = () => {
@@ -12,8 +13,8 @@ const decrement = () => setCount(count - 1);
     <div>
       <h1>Contador: {count}</h1>
       <h2> Css Modules</h2>
-      <button onClick={increment}>Incrementar</button>
-      <button onClick={decrement}>Decrementar</button>
+      <CounterButton onClick={increment}>Incrementar</CounterButton>
+      <CounterButton onClick={decrement}>Decrementar</CounterButton>
       <h1>¡Hola, mundo!</h1>
       <p>Este es un componente funcional básico en React dentro de un Web Component.</p>
     </div>
