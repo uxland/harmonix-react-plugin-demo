@@ -11,7 +11,8 @@ const decrement = () => setCount(count - 1);
 
   return (
     <div>
-      <h1>Contador: {count}</h1>
+      <h1>React Harmonix plugin</h1>
+      <h2>Contador: {count}</h2>
       <CounterButton onClick={increment}>Incrementar</CounterButton>
       <CounterButton onClick={decrement}>Decrementar</CounterButton>
       <h1>¡Hola, mundo!</h1>

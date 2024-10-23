@@ -7,7 +7,7 @@ export const HeaderView = () => {
             {headerStyles}
             </style>
             <div className="title">
-                Header React Plugin
+                React Harmonix plugin
             </div>
         </div>
     );
