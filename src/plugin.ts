@@ -1,6 +1,6 @@
 import { PrimariaApi, PrimariaMenuItem, shellRegions } from "@uxland/primary-shell";
-import { factory as mainFactory } from "./main";
-import { HeaderWebComponent } from "./header-item";
+import { factory as mainFactory } from "./views/main/main-view";
+import { factory as headerFactory } from "./views/header/header-view";
 
 export const initialize = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} initialized`);
@@ -18,7 +18,7 @@ export const initialize = (api: PrimariaApi) => {
 
   api.regionManager.registerView(shellRegions.header,{
     id: "plugin-header-view",
-    factory: () =>  Promise.resolve(new HeaderWebComponent())
+    factory: () =>  headerFactory
   })
   return Promise.resolve();
 };

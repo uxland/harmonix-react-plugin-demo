@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './main.css?inline';
-import {CounterButton} from "./components/counter-button/counter-button";
+import {CounterButton} from "../../components/counter-button/counter-button";
 import { adapterReactWebComponentFactory } from '../../shared/adapter-react-web-component-factory';
 
-// Tu componente de React
-export const ComponenteBasico = () => {
+export const MainView = () => {
 
 const [count, setCount] = React.useState(0);
 const increment = () => setCount(count + 1);
@@ -21,4 +20,4 @@ const decrement = () => setCount(count - 1);
   );
 };
 
-export const factory = adapterReactWebComponentFactory(ComponenteBasico, styles);
+export const factory = adapterReactWebComponentFactory(MainView, styles);
