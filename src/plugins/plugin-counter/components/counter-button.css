@@ -1,0 +1,24 @@
+/* styles.css */
+Button {
+    background-color: #6a0dad; /* Purple color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 24px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.1s; /* Transition for hover and click effects */
+    margin: 10px;
+  }
+  
+  /* Hover effect */
+  Button:hover {
+    background-color: #8a2be2; /* Lighter purple on hover */
+  }
+  
+  /* Click effect */
+  Button:active {
+    transform: scale(0.95); /* Scale down the button slightly */
+    background-color: #5b0e94; /* Darker purple when clicked */
+  }
+  
