@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import styles from './react-element.css?inline';
+import styles from './main.css?inline';
 
 // Tu componente de React
 const ComponenteBasico = () => {
