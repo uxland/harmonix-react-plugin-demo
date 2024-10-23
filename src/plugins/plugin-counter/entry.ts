@@ -1,12 +1,12 @@
 import { PrimariaApi, PrimariaMenuItem, shellRegions } from "@uxland/primary-shell";
-import { ReactWebComponent } from "./main";
+import { factory as mainFactory } from "./main";
 import { HeaderWebComponent } from "./header-item";
 
 export const initialize = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} initialized`);
   api.regionManager.registerMainView({
     id: "plugin-main-view",
-    factory: () =>  Promise.resolve(new ReactWebComponent()) ,
+    factory: () =>  mainFactory,
   }, "React plugin");
   
   api.regionManager.registerQuickAction({
