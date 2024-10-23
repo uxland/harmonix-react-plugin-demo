@@ -1,5 +1,5 @@
 import { PrimariaApi, PrimariaMenuItem, shellRegions } from "@uxland/primary-shell";
-import { ReactWebComponent } from "./components/main";
+import { ReactWebComponent } from "./main";
 
 export const initialize = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} initialized`);

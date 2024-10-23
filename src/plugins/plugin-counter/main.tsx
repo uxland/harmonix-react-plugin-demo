@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import styles from './main.css?inline';
-import {CounterButton} from "./counter-button/counter-button";
+import {CounterButton} from "./components/counter-button/counter-button";
 
 // Tu componente de React
 const ComponenteBasico = () => {
