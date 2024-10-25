@@ -10,15 +10,14 @@ const increment = () => setCount(count + 1);
 const decrement = () => setCount(count - 1);
 
   return (
-    <div>
+    <>
       <h1>React Harmonix plugin</h1>
       <h2>Contador: {count}</h2>
       <CounterButton onClick={increment}>Incrementar</CounterButton>
       <CounterButton onClick={decrement}>Decrementar</CounterButton>
       <h1>¡Hola, mundo!</h1>
       <p>Este es un componente funcional básico en React dentro de un Web Component.</p>
-    </div>
+    </>
   );
 };
-
 export const factory = adapterReactWebComponentFactory(MainView, styles);

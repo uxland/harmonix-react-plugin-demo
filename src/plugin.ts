@@ -6,7 +6,7 @@ export const initialize = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} initialized`);
   api.regionManager.registerMainView({
     id: "plugin-main-view",
-    factory: () =>  mainFactory,
+    factory: mainFactory
   }, "React plugin");
   
   api.regionManager.registerQuickAction({
