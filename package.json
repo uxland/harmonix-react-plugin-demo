@@ -9,10 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@uxland/primary-shell": "^3.0.0",
+    "@uxland/primary-shell": "3.2.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sass": "^1.80.3"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.9",

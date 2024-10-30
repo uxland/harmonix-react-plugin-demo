@@ -1,1 +1,5 @@
-@import "../../components/counter-button/counter-button";
+@import "../../components/counter-button/counter-button.css";
+
+h1{
+    color: blue;
+}

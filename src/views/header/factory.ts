@@ -1,4 +1,4 @@
-import { wrapReactViewFactory } from "../../shared/adapter-react-web-component-factory";
+import { wrapReactViewFactory } from "@uxland/primary-shell";
 import styles from "./styles.css?inline";
 import { HeaderView } from "./view";
 
