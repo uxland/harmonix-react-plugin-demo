@@ -5,6 +5,8 @@ import React from "react";
 export class ReactWebComponent extends HTMLElement {
   jsx: React.FC;
   styles: string;
+  root: ShadowRoot;
+  
   constructor(content: React.FC, styles: string) {
     super();
     this.jsx = content;
