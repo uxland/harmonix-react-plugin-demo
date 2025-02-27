@@ -1,6 +1,5 @@
 import { PrimariaApi, shellRegions, PrimariaNavItem } from "@uxland/primary-shell";
 import { mainFactory } from "./views/main/factory";
-import { headerFactory } from "./views/header/factory";
 
 export const initialize = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} initialized`);
@@ -18,12 +17,6 @@ export const initialize = (api: PrimariaApi) => {
       api.regionManager.activateMainView("plugin-main-view")}
     })),
   });
-
-  api.regionManager.registerView(shellRegions.header,{
-    id: "plugin-header-view",
-    factory: headerFactory
-  })
-  return Promise.resolve();
 };
 export const dispose = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} disposed`);
