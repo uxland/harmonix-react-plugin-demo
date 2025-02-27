@@ -1,4 +1,4 @@
-import { PrimariaApi, PrimariaMenuItem, shellRegions } from "@uxland/primary-shell";
+import { PrimariaApi, shellRegions, PrimariaNavItem } from "@uxland/primary-shell";
 import { mainFactory } from "./views/main/factory";
 import { headerFactory } from "./views/header/factory";
 
@@ -7,13 +7,16 @@ export const initialize = (api: PrimariaApi) => {
   api.regionManager.registerMainView({
     id: "plugin-main-view",
     factory: mainFactory
-  }, "React plugin");
+  });
   
-  api.regionManager.registerQuickAction({
+  api.regionManager.registerNavigationMenu({
     id: "plugin-quick-action",
-    factory: () => Promise.resolve(new PrimariaMenuItem("add_circle_outline", "React plugin", () => {
-      api.regionManager.activateMainView("plugin-main-view");
-})),
+    factory: () => Promise.resolve(new PrimariaNavItem({
+        icon: "add_circle_outline",
+        label: "React plugin",
+        callbackFn: () => {
+      api.regionManager.activateMainView("plugin-main-view")}
+    })),
   });
 
   api.regionManager.registerView(shellRegions.header,{
