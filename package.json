@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@uxland/primary-shell": "4.1.0",
+    "@uxland/primary-shell": "4.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
