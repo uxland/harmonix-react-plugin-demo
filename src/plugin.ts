@@ -1,11 +1,14 @@
 import { PrimariaApi, shellRegions, PrimariaNavItem } from "@uxland/primary-shell";
 import { mainFactory } from "./views/main/factory";
+import { executeInjectHistoryItemsTask } from "./activity-history-plugin-integration/activity-history-actions";
 
 export const initialize = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} initialized`);
+  executeInjectHistoryItemsTask(api);
+
   api.regionManager.registerMainView({
     id: "plugin-main-view",
-    factory: mainFactory
+    factory: ()=>mainFactory({api})
   });
   
   api.regionManager.registerNavigationMenu({
