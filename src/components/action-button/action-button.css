@@ -1,5 +1,5 @@
 /* styles.css */
-.btn-counter {
+.btn-action {
     background-color: #6a0dad; /* Purple color */
     color: white; /* Text color */
     border: none; /* No border */
@@ -12,12 +12,12 @@
   }
   
   /* Hover effect */
-  .btn-counter:hover {
+  .btn-action:hover {
     background-color: #8a2be2; /* Lighter purple on hover */
   }
   
   /* Click effect */
-  .btn-counter:active {
+  .btn-action:active {
     transform: scale(0.95); /* Scale down the button slightly */
     background-color: #5b0e94; /* Darker purple when clicked */
   }
