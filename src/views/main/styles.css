@@ -1,5 +1,8 @@
 @import "../../components/action-button/action-button.css";
 
+:host {
+  padding: 24px
+}
+
 h1{
-    color: blue;
 }

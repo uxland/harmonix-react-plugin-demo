@@ -1,6 +1,6 @@
 /* styles.css */
 .btn-action {
-    background-color: #6a0dad; /* Purple color */
+    background-color: var(--color-primary-500);
     color: white; /* Text color */
     border: none; /* No border */
     padding: 12px 24px; /* Padding */
