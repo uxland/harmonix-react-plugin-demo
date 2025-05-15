@@ -14,8 +14,10 @@ const modifyHistoryItem = () => updateItem(api);
   return (
     <>
       <h1>React Harmonix plugin</h1>
-      <dss-button onClick={addHistoryItem} label="Afegir Element" size="md" variant="primary"></dss-button>
-      <dss-button onClick={modifyHistoryItem} label="Modificar Element" size="md" variant="primary"></dss-button>
+      <div style={{display: "flex", gap: "10px"}}>
+        <dss-button onClick={addHistoryItem} label="Afegir Element" size="md" variant="primary"></dss-button>
+        <dss-button onClick={modifyHistoryItem} label="Modificar Element" size="md" variant="primary"></dss-button>
+      </div>
       <p>Afegeix o modifica elements al segiment clinic.</p>
     </>
   );
