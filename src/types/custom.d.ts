@@ -1,10 +1,8 @@
-declare namespace JSX {
-  interface IntrinsicElements {
-    'dss-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-      onClick?: () => void;
-      label?: string;
-      size?: string;
-      variant?: string;
-    };
+import React from "react";
+declare module "react" {
+  namespace JSX {
+    interface IntrinsicElements {
+      [key: string]: any;
+    }
   }
-} 
+}
