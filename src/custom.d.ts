@@ -6,6 +6,6 @@ declare namespace JSX {
     //   size?: string; // o el tipo específico si lo conoces (ej: "sm" | "md" | "lg")
     //   variant?: string; // o el tipo específico si lo conoces (ej: "primary" | "secondary")
     // };
-    "dss-button": any;
+    'dss-button': any;
   }
 }
