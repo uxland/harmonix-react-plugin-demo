@@ -1,6 +1,6 @@
 export const mockActivityHistoryItem = {
 	id: "ID12345 ",
-	date: "03/06/2024",
+	date: "2025-05-16T09:20:09.903Z",
 	professional: {
 		id: "professional456",
 		name: "Dr. Martínez",
