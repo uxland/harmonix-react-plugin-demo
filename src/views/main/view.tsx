@@ -1,5 +1,4 @@
 import React from 'react';
-import { ActionButton } from "../../components/action-button/action-button";
 import { addItem, updateItem } from '../../activity-history-plugin-integration/activity-history-actions';
 import { PrimariaApi } from '@uxland/primary-shell';
 
@@ -15,8 +14,10 @@ const modifyHistoryItem = () => updateItem(api);
   return (
     <>
       <h1>React Harmonix plugin</h1>
-      <ActionButton onClick={addHistoryItem}>Afegir Element</ActionButton>
-      <ActionButton onClick={modifyHistoryItem}>Modificar Element</ActionButton>
+      <div style={{display: "flex", gap: "10px"}}>
+        <dss-button onClick={addHistoryItem} label="Afegir Element" size="md" variant="primary"></dss-button>
+        <dss-button onClick={modifyHistoryItem} label="Modificar Element" size="md" variant="primary"></dss-button>
+      </div>
       <p>Afegeix o modifica elements al segiment clinic.</p>
     </>
   );
