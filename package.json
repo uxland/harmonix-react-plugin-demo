@@ -1,7 +1,7 @@
 {
   "name": "react-plugin-demo",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "module": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.0.0",
-    "@uxland/harmonix-cli": "^0.0.3",
+    "@uxland/harmonix-cli": "^0.0.4",
     "@types/react-dom": "^19.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
