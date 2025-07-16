@@ -1,6 +1,7 @@
-import { bootstrapPlugins, initializeShell } from "@uxland/primary-shell";
+import { bootstrapPlugins, initializeShell, shellApi } from "@uxland/primary-shell";
 import { plugins } from "./plugins"
 import "@uxland/primary-shell/dist/style.css";
+import { getPlugins } from "./get-plugins";
 
 const createAndAppendSandboxApp= () => {
   const app = document.createElement("sandbox-app");
@@ -9,10 +10,11 @@ const createAndAppendSandboxApp= () => {
   return sandbox as HTMLElement;
 };
 
-const initializeSandboxApp = (sandbox: HTMLElement) => {
+const initializeSandboxApp = async (sandbox: HTMLElement) => {
   try {
     if (sandbox) {
         initializeShell(sandbox);
+        const plugins = await getPlugins(shellApi);
         bootstrapPlugins(plugins);
       }
     }
