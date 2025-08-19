@@ -23,7 +23,7 @@ export const initialize = (api: PrimariaApi) => {
 };
 export const dispose = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} disposed`);
-  const content = api.regionManager.regions.clinicalMonitoring.content;
-  api.regionManager.removeView(content, "plugin-main-view");
+  const mainRegion = api.regionManager.regions.shell.main;
+  api.regionManager.removeView(mainRegion, "plugin-main-view");
   return Promise.resolve();
 }
