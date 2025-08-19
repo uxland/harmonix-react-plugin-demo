@@ -1,4 +1,4 @@
-import { PrimariaApi, shellRegions, PrimariaNavItem } from "@uxland/primary-shell";
+import { PrimariaApi, PrimariaNavItem } from "@uxland/primary-shell";
 import { mainFactory } from "./views/main/factory";
 import { executeInjectHistoryItemsTask } from "./activity-history-plugin-integration/activity-history-actions";
 
@@ -23,6 +23,7 @@ export const initialize = (api: PrimariaApi) => {
 };
 export const dispose = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} disposed`);
-  api.regionManager.removeView(shellRegions.main, "plugin-main-view");
+  const content = api.regionManager.regions.clinicalMonitoring.content;
+  api.regionManager.removeView(content, "plugin-main-view");
   return Promise.resolve();
 }

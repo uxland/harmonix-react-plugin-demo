@@ -1,4 +1,4 @@
-import { ActivityHistoryFilterType, PrimariaApi } from "@uxland/primary-shell";
+import { PrimariaApi } from "@uxland/primary-shell";
 import { ActivityHistoryItemWrapped } from "./activity-history-item/factory";
 import { mockActivityHistoryItem } from "./activity-history-item/mocks";
 
@@ -29,7 +29,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 					propPathValue: ["professional", "speciality", "id"],
 					propsPathDescription: ["professional", "speciality", "description"],
 					enabled: true,
-					type: ActivityHistoryFilterType.Checkbox,
+					type: "checkbox",
 				},
 				{
 					id: "role",
@@ -37,7 +37,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 					propPathValue: ["professional", "role", "id"],
 					propsPathDescription: ["professional", "role", "description"],
 					enabled: true,
-					type: ActivityHistoryFilterType.Checkbox,
+					type: "checkbox",
 				},
 				{
 					id: "service",
@@ -45,7 +45,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 					propPathValue: ["service", "id"],
 					propsPathDescription: ["service", "description"],
 					enabled: true,
-					type: ActivityHistoryFilterType.Checkbox,
+					type: "checkbox",
 				},
 			],
 		},
