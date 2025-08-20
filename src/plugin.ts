@@ -11,7 +11,8 @@ export const initialize = (api: PrimariaApi) => {
     factory: ()=>mainFactory({api})
   });
   
-  api.regionManager.registerNavigationMenu({
+  const navigationMenu = api.regionManager.regions.shell.navigationMenu;
+  api.regionManager.registerView(navigationMenu,{
     id: "plugin-quick-action",
     factory: () => Promise.resolve(new PrimariaNavItem({
         icon: "add_circle_outline",
@@ -25,5 +26,7 @@ export const dispose = (api: PrimariaApi) => {
   console.log(`Plugin ${api.pluginInfo.pluginId} disposed`);
   const mainRegion = api.regionManager.regions.shell.main;
   api.regionManager.removeView(mainRegion, "plugin-main-view");
+  const navigationMenu = api.regionManager.regions.shell.navigationMenu;
+  api.regionManager.removeView(navigationMenu, "plugin-quick-action");
   return Promise.resolve();
 }
