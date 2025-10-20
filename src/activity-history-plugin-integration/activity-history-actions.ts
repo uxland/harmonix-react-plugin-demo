@@ -71,3 +71,10 @@ export const updateItem = (api: PrimariaApi) => {
 		item: newItem,
 	});
 };
+
+export const deleteItem = (api: PrimariaApi) => {
+	return api.broker.send("remove_history_item_request", {
+		entityId: api.pluginInfo.pluginId,
+		itemId: mockActivityHistoryItem.id,
+	});
+};

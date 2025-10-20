@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { addItem, updateItem } from '../../activity-history-plugin-integration/activity-history-actions';
+import { addItem, deleteItem, updateItem } from '../../activity-history-plugin-integration/activity-history-actions';
 import { PrimariaApi } from '@uxland/primary-shell';
 
 interface MainViewProps {
@@ -12,6 +12,7 @@ export const MainView: React.FC<MainViewProps> = ({api}) => {
 
   const addHistoryItem = () => addItem(api);
   const modifyHistoryItem = () => updateItem(api);
+  const removeHistoryItem = () => deleteItem(api);
 
   const publicarEvent = () => {
     api.broker.publish("event_react_demo", { missatge: "Event rebut correctament!" });
@@ -29,9 +30,10 @@ export const MainView: React.FC<MainViewProps> = ({api}) => {
       <h1>React Harmonix plugin</h1>
       <div style={{display: "flex", gap: "10px"}}>
         <dss-button onClick={addHistoryItem} label="Afegir Element" size="md" variant="primary"></dss-button>
-        <dss-button onClick={modifyHistoryItem} label="Modificar Element" size="md" variant="primary"></dss-button>
+        <dss-button onClick={modifyHistoryItem} label="Modificar Element" size="md" variant="secondary"></dss-button>
+        <dss-button onClick={removeHistoryItem} label="Eliminar Element" size="md" variant="error"></dss-button>
       </div>
-      <p>Afegeix o modifica elements al seguiment clinic.</p>
+      <p>Afegeix, modifica o elimina elements al seguiment clinic.</p>
       <div style={{display: "flex", gap: "10px"}}>
         <dss-button onClick={publicarEvent} label="Publicar event" size="md" variant="primary"></dss-button>
         <dss-button onClick={escoltarEvent} label="Escoltar event" size="md" variant="secondary"></dss-button>
