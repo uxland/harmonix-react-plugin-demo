@@ -10,9 +10,33 @@ export const MainView: React.FC<MainViewProps> = ({api}) => {
   const [missatge, setMissatge] = useState<string | null>(null);
   const subscriptionRef = useRef<any>(null);
 
-  const addHistoryItem = () => addItem(api);
-  const modifyHistoryItem = () => updateItem(api);
-  const removeHistoryItem = () => deleteItem(api);
+  const addHistoryItem = async () => {
+    try {
+      await addItem(api);
+      api.notificationService.success("Element afegit correctament");
+      api.regionManager.deactivateView(api.regionManager.regions.shell.main, "plugin-main-view");
+    } catch (error) {
+      api.notificationService.error("Error afegint l'element");
+    }
+  };
+  const modifyHistoryItem = async () => {
+    try {
+      await updateItem(api);
+      api.notificationService.success("Element modificat correctament");
+      api.regionManager.deactivateView(api.regionManager.regions.shell.main, "plugin-main-view");
+    } catch (error) {
+      api.notificationService.error("Error modificant l'element");
+    }
+  };
+  const removeHistoryItem = async () => {
+    try {
+      await deleteItem(api);
+      api.notificationService.success("Element eliminat correctament");
+      api.regionManager.deactivateView(api.regionManager.regions.shell.main, "plugin-main-view");
+    } catch (error) {
+      api.notificationService.error("Error eliminant l'element");
+    }
+  };
 
   const publicarEvent = () => {
     api.broker.publish("event_react_demo", { missatge: "Event rebut correctament!" });
