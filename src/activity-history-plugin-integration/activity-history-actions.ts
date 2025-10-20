@@ -1,6 +1,7 @@
-import { PrimariaApi } from "@uxland/primary-shell";
+import { IActivityHistoryItem, PrimariaApi } from "@uxland/primary-shell";
 import { ActivityHistoryItemWrapped } from "./activity-history-item/factory";
 import { mockActivityHistoryItem } from "./activity-history-item/mocks";
+import { IActivityHistoryCustomFilter } from "@uxland/primary-shell";
 
 export const asyncTask = (item) => {
 	return new Promise((resolve) => {
@@ -12,7 +13,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 	const payload = {
 		entityId: api.pluginInfo.pluginId,
 		asyncDataProvider: () => asyncTask(mockActivityHistoryItem),
-		componentFactory: (props: { item: any }) =>
+		componentFactory: (props: { item: IActivityHistoryItem }) =>
 			ActivityHistoryItemWrapped({ item: props.item }),
 		errorMessage: "Error plugin demo",
 		searchPredicate: (searchString: string, item: any) =>
@@ -48,7 +49,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 					type: "checkbox",
 				},
 			],
-		},
+		} as IActivityHistoryCustomFilter,
 	};
 	api.broker.send("inject_async_history_items_request", payload);
 };
