@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@uxland/primary-shell": "^7.13.2",
+    "@uxland/regions": "^1.0.0",
+    "lit": "^3.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

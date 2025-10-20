@@ -1,7 +1,6 @@
-import { IActivityHistoryItem, PrimariaApi } from "@uxland/primary-shell";
+import { IActivityHistoryItem, PrimariaApi, IActivityHistoryCustomFilter } from "@uxland/primary-shell";
 import { ActivityHistoryItemWrapped } from "./activity-history-item/factory";
 import { mockActivityHistoryItem } from "./activity-history-item/mocks";
-import { IActivityHistoryCustomFilter } from "@uxland/primary-shell";
 
 export const asyncTask = (item) => {
 	return new Promise((resolve) => {
