@@ -1,6 +1,5 @@
 import { bootstrapPlugins, initializeShell } from "@uxland/primary-shell";
 import { plugins } from "./plugins"
-import "@uxland/primary-shell/dist/styles.css";
 
 const createAndAppendSandboxApp= () => {
   const app = document.createElement("sandbox-app");
