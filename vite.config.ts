@@ -21,7 +21,7 @@ export default ({ mode }) => {
         formats: ["es"]
       },
       rollupOptions: {
-        external: ["react", "react-dom",  "@uxland/primary-shell", "react-dom/client"],
+        external: ["react", "react-dom",  "@uxland/primary-shell", "@uxland/regions", "react-dom/client"],
         output: {
           inlineDynamicImports: true, // Incluye todas las importaciones dinámicas en un solo archivo
           manualChunks: undefined, // Desactiva la fragmentación para generar un solo archivo
