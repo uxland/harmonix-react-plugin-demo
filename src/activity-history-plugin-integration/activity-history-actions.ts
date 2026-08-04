@@ -50,12 +50,15 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 			],
 		} as IActivityHistoryCustomFilter,
 	};
-	api.broker.send("inject_async_history_items_request", payload);
+	api.broker.send(
+		api.broker.events.activityHistory.injectAsyncHistoryItemsRequest,
+		payload,
+	);
 };
 
 export const addItem = (api: PrimariaApi) => {
 	const newItem = { ...mockActivityHistoryItem, id: Math.random().toString() };
-	return api.broker.send("add_history_item_request", {
+	return api.broker.send(api.broker.events.activityHistory.addHistoryItemRequest, {
 		entityId: api.pluginInfo.pluginId,
 		item: newItem,
 	});
@@ -66,14 +69,14 @@ export const updateItem = (api: PrimariaApi) => {
 		...mockActivityHistoryItem,
 		date: "2025-05-18T09:20:09.903Z",
 	};
-	return api.broker.send("update_history_item_request", {
+	return api.broker.send(api.broker.events.activityHistory.updateHistoryItemRequest, {
 		entityId: api.pluginInfo.pluginId,
 		item: newItem,
 	});
 };
 
 export const deleteItem = (api: PrimariaApi) => {
-	return api.broker.send("remove_history_item_request", {
+	return api.broker.send(api.broker.events.activityHistory.removeHistoryItemRequest, {
 		entityId: api.pluginInfo.pluginId,
 		itemId: mockActivityHistoryItem.id,
 	});
