@@ -22,32 +22,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 			title: "Plugin Demo",
 			enabled: true,
 			sort: "003",
-			filters: [
-				{
-					id: "speciality",
-					title: "Especialitat",
-					propPathValue: ["professional", "speciality", "id"],
-					propsPathDescription: ["professional", "speciality", "description"],
-					enabled: true,
-					type: "checkbox",
-				},
-				{
-					id: "role",
-					title: "Rol",
-					propPathValue: ["professional", "role", "id"],
-					propsPathDescription: ["professional", "role", "description"],
-					enabled: true,
-					type: "checkbox",
-				},
-				{
-					id: "service",
-					title: "Servei",
-					propPathValue: ["service", "id"],
-					propsPathDescription: ["service", "description"],
-					enabled: true,
-					type: "checkbox",
-				},
-			],
+			filters: [],
 		} as IActivityHistoryCustomFilter,
 	};
 	api.broker.send(
