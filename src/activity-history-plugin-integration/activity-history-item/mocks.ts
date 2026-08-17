@@ -1,4 +1,4 @@
-import { IActivityHistoryItem } from "@uxland/primary-shell";
+import type { IActivityHistoryItem } from "@uxland/primary-shell";
 
 export const mockActivityHistoryItem: IActivityHistoryItem = {
 	id: "ID12345",

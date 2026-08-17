@@ -1,4 +1,4 @@
-import { IActivityHistoryItem, PrimariaApi, IActivityHistoryCustomFilter } from "@uxland/primary-shell";
+import type { IActivityHistoryItem, PrimariaApi } from "@uxland/primary-shell";
 import { ActivityHistoryItemWrapped } from "./activity-history-item/factory";
 import { mockActivityHistoryItem } from "./activity-history-item/mocks";
 
@@ -16,14 +16,7 @@ export const executeInjectHistoryItemsTask = (api: PrimariaApi) => {
 			ActivityHistoryItemWrapped({ item: props.item }),
 		errorMessage: "Error plugin demo",
 		searchPredicate: (searchString: string, item: any) =>
-			item.title.toLowerCase().includes(searchString.toLowerCase()),
-		filters: {
-			id: api.pluginInfo.pluginId,
-			title: "Plugin Demo",
-			enabled: true,
-			sort: "003",
-			filters: [],
-		} as IActivityHistoryCustomFilter,
+			item.title.toLowerCase().includes(searchString.toLowerCase())
 	};
 	api.broker.send(
 		api.broker.events.activityHistory.injectAsyncHistoryItemsRequest,
