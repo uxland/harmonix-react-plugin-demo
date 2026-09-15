@@ -2,7 +2,7 @@ import type { IActivityHistoryItem, PrimariaApi } from "@uxland/primary-shell";
 import { ActivityHistoryItemWrapped } from "./activity-history-item/factory";
 import { mockActivityHistoryItem } from "./activity-history-item/mocks";
 
-export const asyncTask = (item) => {
+export const asyncTask = (item: IActivityHistoryItem) => {
 	return new Promise((resolve) => {
 		setTimeout(() => resolve([item]), 2000);
 	});
